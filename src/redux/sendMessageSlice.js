@@ -24,7 +24,7 @@ export const sendMessageSlice = createSlice({
         const send = {
             id: uuidv4(),
             messageUserName: "User2",
-            messageText: action.payload.title,
+            messageText: action.payload.messageText,
             messageTime: time,
         };
         state.push(send);

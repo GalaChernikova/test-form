@@ -9,6 +9,7 @@ export default function SendMessage() {
 
   const onSubmit = (event) => {
     event.preventDefault();
+    
     if (value) {
       dispatch(
         addMessage({
@@ -16,13 +17,18 @@ export default function SendMessage() {
         })
       );
     }
+    setValue("");
+    
   };
+
+
 
   return (
     <div>
       <form
         className="flex items-center rounded-lg w-[506px] h-[54px] mt-[36px] mb-[35px] mx-[32px] bg-white border-formBorder border"
         onSubmit={onSubmit}
+        
       >
         <input
           type="text"
@@ -30,6 +36,7 @@ export default function SendMessage() {
           className="w-full h-full placeholder:text-mainText opacity-100 pl-[18px] rounded-lg  focus:outline-none"
           value={value}
           onChange={(event) => setValue(event.target.value)}
+          
         />
         <button type="submit">
           <img src={sendMessageImg} alt="send_icon" className="pr-[14px]" />
