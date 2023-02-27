@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import inboxReducer from './inboxSlice'
+import sendMessageReducer from './sendMessageSlice'
 
 export default configureStore({
   reducer: {
-    inbox: inboxReducer,
+    inboxMessages: inboxReducer,
+    sendMessages: sendMessageReducer,
   }
 })

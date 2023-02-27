@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
+
+
 export const inboxSlice = createSlice({
   name: "inbox",
   initialState: [
@@ -10,6 +12,7 @@ export const inboxSlice = createSlice({
       inboxMessageText: "Привет",
       inboxTime: "13:30",
     },
+    
 
   ],
   reducers: {
@@ -19,6 +22,6 @@ export const inboxSlice = createSlice({
   },
 });
 
-export const { deleteInbox } = inboxSlice.actions;
+export const { addMessage, deleteInbox } = inboxSlice.actions;
 
 export default inboxSlice.reducer;

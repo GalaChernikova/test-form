@@ -21,3 +21,20 @@ body {
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(35, 44, 94, 0.12);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(35, 44, 94, 0.12);
+  border-radius: 5px;
+  border: transparent;
+}

@@ -1,14 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { deleteInbox } from "../redux/inboxSlice";
-import deleteMessage from "./../images/clarity_close-line.svg";
+import deleteMessageImg from "./../images/clarity_close-line.svg";
 
 export default function InboxMessage({
-  id,
-  inboxUserName,
-  inboxMessageText,
-  inboxTime,
+  id
 }) {
-  const inboxMessages = useSelector((state) => state.inbox);
+  const inboxMessagesAll = useSelector((state) => state.inboxMessages);
   const dispatch = useDispatch();
 
   const handleDeleteInboxMessage = () => {
@@ -17,9 +14,9 @@ export default function InboxMessage({
 
   return (
     <div>
-      {inboxMessages.map((inbox) => {
+      {inboxMessagesAll.map((inbox) => {
         return (
-          <div className="flex flex-col mt-[28px] ml-[32px]" key={inbox.id}>
+          <div className="flex flex-col ml-[32px]" key={inbox.id}>
             <p className="text-base text-lightGreyText mb-[6px]">
               {inbox.inboxUserName}
             </p>
@@ -39,7 +36,7 @@ export default function InboxMessage({
                 onClick={handleDeleteInboxMessage}
                 onSubmit={handleDeleteInboxMessage}
               >
-                <img src={deleteMessage} alt="delete_message" />
+                <img src={deleteMessageImg} alt="delete_message" />
               </button>
             </div>
           </div>
